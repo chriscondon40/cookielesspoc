@@ -124,7 +124,7 @@
     //s.pageURL = typeof tmPageURL != "undefined" ? tmPageURL : "";
     // s.channel = typeof channel != "undefined" ? channel : "";
     // s.prop1 = s.channel; WAITING TO CREATE CHANNELS ON POC PAGES
-    s.campaign = "cid";
+    s.campaign = "test cid";
     s.eVar1 = typeof ecid != "undefined" ? ecid : "";
     s.eVar2 = 'D=g';
     s.eVar3 = s.Util.cookieRead("username");
