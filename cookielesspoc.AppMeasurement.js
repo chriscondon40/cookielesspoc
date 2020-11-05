@@ -11,7 +11,7 @@
     s.linkTrackEvents = "None";
     s.currencyCode = "USD";
     // s.visitorNamespace = "miamiheatlimitedpartnership";
-    s.trackingServer = "eymeasurement.com.sc.omtrdc.net";
+    s.trackingServer = "eymeasurement.sc.omtrdc.net";
     //s.trackingServerSecure = "eymeasurement.com.sc.omtrdc.net";
     //  s.usePlugins = false; SHOULD THIS BE SET TO TRUE
 
