@@ -89,22 +89,6 @@
     //}
  */
   
-        //Global call for getQueryParams
-    function getQueryParams(qs) {
-        qs = String(qs);
-        qs = qs.replace(/\+/g, " ");
-        var params = {}
-            , re = /[?&]?([^=]+)=([^&]*)/g
-            , tokens;
-        while (tokens = re.exec(qs)) {
-            params[decodeURIComponent(tokens[1].toLowerCase())] = decodeURIComponent(tokens[2]).toLowerCase();
-        }
-        return params;
-    }
-
-    var cid = getQueryParams(document.location.search.cid);
-
-
     /************************* GLOBAL VARIABLES OBJECTS **************************/
 
  
@@ -124,7 +108,15 @@
     //s.pageURL = typeof tmPageURL != "undefined" ? tmPageURL : "";
     // s.channel = typeof channel != "undefined" ? channel : "";
     // s.prop1 = s.channel; WAITING TO CREATE CHANNELS ON POC PAGES
-    s.campaign = "test cid";
+    function getUrlParameter(name) {
+	    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+	    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+	    var results = regex.exec(location.search);
+	    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+	};    
+	    s.campaign = getUrlParameter('extcid');;
+
+    // s.campaign = "test cid";
     s.eVar1 = typeof ecid != "undefined" ? ecid : "";
     s.eVar2 = 'D=g';
     s.eVar3 = s.Util.cookieRead("username");
