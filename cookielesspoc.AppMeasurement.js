@@ -114,7 +114,7 @@
 	    var results = regex.exec(location.search);
 	    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 	};    
-	    s.campaign = getUrlParameter('extcid');;
+	    s.campaign = getUrlParameter('extcid');
 
     // s.campaign = "test cid";
     s.eVar1 = typeof ecid != "undefined" ? ecid : "";
