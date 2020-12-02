@@ -12,7 +12,7 @@
     s.currencyCode = "USD";
     // s.visitorNamespace = "miamiheatlimitedpartnership";
     s.trackingServer = "eymeasurement.sc.omtrdc.net";
-    //s.trackingServerSecure = "eymeasurement.com.sc.omtrdc.net";
+    //s.trackingServerSecure = "eymeasurement.sc.omtrdc.net";
     //  s.usePlugins = false; SHOULD THIS BE SET TO TRUE
 
     /************************* PLUGINS SECTION **************************/
@@ -89,6 +89,23 @@
     //}
  */
   
+  /*
+        //Global call for getQueryParams
+    function getQueryParams(qs) {
+        qs = String(qs);
+        qs = qs.replace(/\+/g, " ");
+        var params = {}
+            , re = /[?&]?([^=]+)=([^&]*)/g
+            , tokens;
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1].toLowerCase())] = decodeURIComponent(tokens[2]).toLowerCase();
+        }
+        return params;
+    }
+
+    var cid = getQueryParams(document.location.search.cid);
+*/
+
     /************************* GLOBAL VARIABLES OBJECTS **************************/
 
  
@@ -108,15 +125,15 @@
     //s.pageURL = typeof tmPageURL != "undefined" ? tmPageURL : "";
     // s.channel = typeof channel != "undefined" ? channel : "";
     // s.prop1 = s.channel; WAITING TO CREATE CHANNELS ON POC PAGES
-    function getUrlParameter(name) {
-	    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-	    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-	    var results = regex.exec(location.search);
-	    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-	};    
-	    s.campaign = getUrlParameter('extcid');
+        function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };    
+        s.campaign = getUrlParameter('cid');
 
-    // s.campaign = "test cid";
+    // s.campaign = "cid";
     s.eVar1 = typeof ecid != "undefined" ? ecid : "";
     s.eVar2 = 'D=g';
     s.eVar3 = s.Util.cookieRead("username");
@@ -250,6 +267,21 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
  //marketingCloudServerSecure: "INSERT-SECURE-TRACKING-SERVER-HERE" // same as s.trackingServerSecure
 
  // idSyncAttachIframeOnWindowLoad: true
+
+   //Get RID
+    var rid = typeof getQueryParams(tmpageURLQS).rid != "undefined" ? getQueryParams(tmpageURLQS).rid : "";
+    var ecid = typeof s.visitor.getMarketingCloudVisitorID() != "undefined" ? s.visitor.getMarketingCloudVisitorID() : "";
+    //Set Customer IDs
+    visitor.setCustomerIDs({
+        "ecid":{
+            "id": ecid,
+            "authState":0
+        },
+        "rid":{
+            "id": rid,
+            "authState":0
+        }
+    });
 
  });
 
