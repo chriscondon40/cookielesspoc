@@ -89,8 +89,7 @@
     //}
  */
   
-  /*
-        //Global call for getQueryParams
+      //Global call for getQueryParams
     function getQueryParams(qs) {
         qs = String(qs);
         qs = qs.replace(/\+/g, " ");
@@ -103,8 +102,8 @@
         return params;
     }
 
-    var cid = getQueryParams(document.location.search.cid);
-*/
+    //GET QUERY PARAMETERS
+    var tmpageURLQS = tmPageURL.split("?")[1];
 
     /************************* GLOBAL VARIABLES OBJECTS **************************/
 
