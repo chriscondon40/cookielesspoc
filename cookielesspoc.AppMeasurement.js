@@ -107,7 +107,6 @@
   
 
     var cid = getQueryParams(document.location.search.cid);
-*/
 
     /************************* GLOBAL VARIABLES OBJECTS **************************/
 
