@@ -252,11 +252,11 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
  s.visitor = Visitor.getInstance("0F6446D257BEE2D57F000101@AdobeOrg");
 
  //Call Visitor ID Service
+ 
 
  var visitor = Visitor.getInstance("0F6446D257BEE2D57F000101@AdobeOrg", {
 
  trackingServer: "eymeasurement.com.sc.omtrdc.net", // same as s.trackingServer
-});
 
  //trackingServerSecure: "miamiheatlimitedpartnership.sc.omtrdc.net", // same as s.trackingServerSecure
 
@@ -271,25 +271,10 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
  // idSyncAttachIframeOnWindowLoad: true
 
    //Get RID
-    /*
-    //Global call for getQueryParams
-    function getQueryParams(qs) {
-        qs = String(qs);
-        qs = qs.replace(/\+/g, " ");
-        var params = {}
-            , re = /[?&]?([^=]+)=([^&]*)/g
-            , tokens;
-        while (tokens = re.exec(qs)) {
-            params[decodeURIComponent(tokens[1].toLowerCase())] = decodeURIComponent(tokens[2]).toLowerCase();
-        }
-        return params;
-    }
 
     var setrid = getQueryParams(document.location.search).rid;
     var setcid = getQueryParams(document.location.search).cid;
 
-    var rid = 123; 
-    typeof setrid != "undefined" ? getQueryParams(tmpageURLQS).rid : "";
     var ecid = typeof s.visitor.getMarketingCloudVisitorID() != "undefined" ? s.visitor.getMarketingCloudVisitorID() : "";
     //Set Customer IDs
     visitor.setCustomerIDs({
@@ -305,7 +290,7 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
 
  });
 
-*/
+
 /************************* TRIGGER ANALYTICS **************************/
  var s_code = s.t();
 
