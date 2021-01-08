@@ -271,7 +271,7 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
  // idSyncAttachIframeOnWindowLoad: true
 
    //Get RID
-
+    getQueryParams();
     function getQueryParams(qs) {
         qs = String(qs);
         qs = qs.replace(/\+/g, " ");
