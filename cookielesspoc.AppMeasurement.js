@@ -257,9 +257,12 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
 
  //Call Visitor ID Service
  
+ var rid = 123;
+
  var visitor = Visitor.getInstance("0F6446D257BEE2D57F000101@AdobeOrg", {
 
  trackingServer: "eymeasurement.com.sc.omtrdc.net", // same as s.trackingServer
+}
 
  //trackingServerSecure: "miamiheatlimitedpartnership.sc.omtrdc.net", // same as s.trackingServerSecure
 
@@ -274,7 +277,9 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
  // idSyncAttachIframeOnWindowLoad: true
 
    //Get RID
-    var rid = 123;
+    
+    /*
+    var rid = 123; 
     typeof setrid != "undefined" ? getQueryParams(tmpageURLQS).rid : "";
     var ecid = typeof s.visitor.getMarketingCloudVisitorID() != "undefined" ? s.visitor.getMarketingCloudVisitorID() : "";
     //Set Customer IDs
@@ -290,7 +295,7 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
     });
 
  });
-
+*/
 
 /************************* TRIGGER ANALYTICS **************************/
  var s_code = s.t();
