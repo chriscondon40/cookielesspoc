@@ -277,7 +277,6 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
  // idSyncAttachIframeOnWindowLoad: true
 
    //Get RID
-    
     /*
     var rid = 123; 
     typeof setrid != "undefined" ? getQueryParams(tmpageURLQS).rid : "";
