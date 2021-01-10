@@ -271,18 +271,6 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
  // idSyncAttachIframeOnWindowLoad: true
 
    //Get RID
-    getQueryParams();
-    function getQueryParams(qs) {
-        qs = String(qs);
-        qs = qs.replace(/\+/g, " ");
-        var params = {}
-            , re = /[?&]?([^=]+)=([^&]*)/g
-            , tokens;
-        while (tokens = re.exec(qs)) {
-            params[decodeURIComponent(tokens[1].toLowerCase())] = decodeURIComponent(tokens[2]).toLowerCase();
-        }
-        return params;
-    }
 
     var setrid = getQueryParams(document.location.search).rid;
     var setcid = getQueryParams(document.location.search).cid;
