@@ -141,6 +141,9 @@
 
     // tracking code = extcid;
 
+    var setrid = getQueryParams(document.location.search).rid;
+    var setcid = getQueryParams(document.location.search).cid;
+
 /**
  * @license
  * Adobe Visitor API for JavaScript version: 4.4.0
@@ -272,8 +275,6 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
 
    //Get RID
 
-    var setrid = getQueryParams(document.location.search).rid;
-    var setcid = getQueryParams(document.location.search).cid;
 
     var ecid = typeof s.visitor.getMarketingCloudVisitorID() != "undefined" ? s.visitor.getMarketingCloudVisitorID() : "";
     //Set Customer IDs
