@@ -260,7 +260,7 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
  var visitor = Visitor.getInstance("0F6446D257BEE2D57F000101@AdobeOrg", {
 
  trackingServer: "eymeasurement.com.sc.omtrdc.net", // same as s.trackingServer
-
+});
  //trackingServerSecure: "miamiheatlimitedpartnership.sc.omtrdc.net", // same as s.trackingServerSecure
 
  // To enable CNAME support, add the following configuration variables
@@ -289,7 +289,7 @@ function s_pgicq(){var r=window,a=r.s_giq,h,q,p;if(a)for(h=0;h<a.length;h++)q=a[
         }
     });
 
- });
+ 
 
 
 /************************* TRIGGER ANALYTICS **************************/
